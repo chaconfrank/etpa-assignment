@@ -2,17 +2,16 @@
 
     |-- com.epta.assigment
     |   |-- application
-    |   |   |-- command
-    |   |   |   |-- [domain command]
-    |   |   |   |   |-- [use cases]
-    |   |   |-- handler
-    |   |   |   |-- [domain handler]
-    |   |   |   |   |-- [use cases]
     |   |   |-- mediator
+    |   |   |-- [domain]
+    |   |   |   |-- command
+    |   |   |   |-- dto
+    |   |   |   |-- handler
+    |   |   |   |-- query
     |   |-- domain
     |   |-- infrastructure
+    |   |   |-- controller
     |   |   |-- repository
-    |   |   |-- web
 
 ## Requirements
 You will need:
