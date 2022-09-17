@@ -11,6 +11,7 @@
     |   |-- domain
     |   |-- infrastructure
     |   |   |-- controller
+    |   |   |-- exception
     |   |   |-- repository
 
 ## Requirements
