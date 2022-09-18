@@ -28,4 +28,11 @@ libraries and versions used.
 ## Building the project
 Clone the project and use Maven to build the server
 
-`$ mvn clean install`
+`$ mvn clean install` 
+
+## Database
+We are using an in-memory database H2
+
+URL: `http://localhost:8082/h2-console` <br>
+User: `sa` <br>
+Password: `Cambiar123*`

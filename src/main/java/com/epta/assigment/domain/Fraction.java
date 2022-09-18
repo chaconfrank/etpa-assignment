@@ -11,20 +11,26 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "profiles", indexes = @Index(columnList = "name", unique = true))
+@Table(name = "fractions", indexes = @Index(columnList = "month_code, profile_id", unique = true))
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class Profile {
-
+public class Fraction {
 
     @Id
     @GeneratedValue
-    @Column(name = "profile_id")
-    private UUID profileId;
+    private UUID id;
 
-    @Column(length = 50, nullable = false)
-    private String name;
+    @Column(name = "fraction_id")
+    private String fractionId;
+
+    @Column(name = "month_code", length = 10, nullable = false)
+    private String monthCode;
+
+    @ManyToOne
+    @JoinColumn(name = "profile_id", nullable = false)
+    private Profile profile;
+
 }

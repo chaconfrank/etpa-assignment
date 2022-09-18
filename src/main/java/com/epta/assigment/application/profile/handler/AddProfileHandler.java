@@ -23,7 +23,7 @@ public class AddProfileHandler implements RequestHandler<AddProfileCommand, Prof
     public Profile handle(AddProfileCommand request) {
 
         Profile profile = Profile.builder()
-                .name(request.getName())
+                .name(request.getName().toUpperCase())
                 .build();
 
         profile = repository.save(profile);
