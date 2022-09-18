@@ -23,11 +23,11 @@ public class Fraction {
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "fraction_id")
-    private String fractionId;
-
     @Column(name = "month_code", length = 10, nullable = false)
     private String monthCode;
+
+    @Column(name = "fraction", nullable = false)
+    private Double fraction;
 
     @ManyToOne
     @JoinColumn(name = "profile_id", nullable = false)
