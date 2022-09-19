@@ -31,17 +31,17 @@ public class FractionController {
     }
 
     @PostMapping
-    public ResponseEntity<Fraction> save(@RequestBody @Valid AddFractionDto addFractionDto){
+    public ResponseEntity<Fraction> save(@RequestBody @Valid AddFractionDto addFractionDto) throws BadRequestException {
 
         Profile profile = mediator.send(GetProfileQuery.builder()
-                        .name(addFractionDto.getProfile())
+                .name(addFractionDto.getProfile())
                 .build());
 
         this.isValidFraction(profile, addFractionDto.getFraction());
 
         Fraction fraction = mediator.send(AddFractionCommand.builder()
                         .fraction(addFractionDto.getFraction())
-                        .monthCode(addFractionDto.getMonthCode().toString())
+                        .monthCode(addFractionDto.getMonthCode())
                         .profile(profile)
                 .build());
 

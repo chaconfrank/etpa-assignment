@@ -21,13 +21,14 @@ public class AddProfileHandler implements RequestHandler<AddProfileCommand, Prof
 
     @Override
     public Profile handle(AddProfileCommand request) {
+        Profile profile = this.buildProfile(request);
+        profile = repository.save(profile);
+        return profile;
+    }
 
-        Profile profile = Profile.builder()
+    private Profile buildProfile(AddProfileCommand request){
+        return Profile.builder()
                 .name(request.getName().toUpperCase())
                 .build();
-
-        profile = repository.save(profile);
-
-        return profile;
     }
 }

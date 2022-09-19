@@ -7,6 +7,8 @@ import com.epta.assigment.infraestructure.repository.FractionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.Month;
+
 @Component
 public class AddFractionHandler implements RequestHandler<AddFractionCommand, Fraction> {
 
@@ -19,7 +21,6 @@ public class AddFractionHandler implements RequestHandler<AddFractionCommand, Fr
 
     @Override
     public Fraction handle(AddFractionCommand request) {
-
         Fraction fraction = this.buildFraction(request);
         fraction = repository.save(fraction);
         return fraction;
